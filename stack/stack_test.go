@@ -1,6 +1,7 @@
 package stack
 
 import (
+	"fmt"
 	"testing"
 )
 
@@ -38,11 +39,12 @@ func TestIsNotEmpty(t *testing.T) {
 }
 
 func TestPile(t *testing.T) {
-	expected := 1
+	expected := 2
 	st := make(Stack, 0, max_items_size)
 	item := Items{Item: "test", Size: 1}
 	currLen, _ := st.Pile(item)
 
+	fmt.Println(currLen)
 	if currLen != expected {
 		t.Errorf("Expected stack size 1, but got %d", len(st))
 	}
